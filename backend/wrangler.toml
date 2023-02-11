@@ -1,0 +1,41 @@
+name = "quaternion-backend"
+type = "javascript"
+workers_dev = true
+# Add your account ID here
+account_id = "e5d9f245ca3b1bab5c43db49eb49b67e"
+compatibility_date = "2022-12-14"
+main = "build/index.js"
+
+[build]
+command = "yarn build"
+watch_dir = "worker"
+
+[build.upload]
+format = "modules"
+main = "./index.js"
+dir = "build"
+
+[[build.upload.rules]]
+globs = ["build/*.js"]
+type = "ESModule"
+
+[durable_objects]
+bindings = [
+  { name = "POOL", class_name = "Pool" },
+  { name = "LOBBY", class_name = "Lobby" },
+  { name = "SPACE", class_name = "Space" },
+  { name = "BLOCK", class_name = "Block" },
+  { name = "USER", class_name = "User" },
+]
+
+[[migrations]]
+tag = "v4" # Should be unique for each entry
+deleted_classes = ["Room"] # Array of deleted class names
+# new_classes = ["Pool","Lobby","Space","Block"] # Array of new classes
+# delete_classes = ["Room"] # Array of classes to delete
+
+
+[[r2_buckets]]
+binding = 'BUCKET'
+bucket_name = 'images'
+preview_bucket_name = 'images'

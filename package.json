@@ -1,0 +1,13 @@
+{
+    "name": "quaternion",
+    "version": "1.0.0",
+    "repository": "https://github.com/lukejmann/quaternion.git",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {},
+    "workspaces": [
+        "frontend",
+        "sync-core",
+        "backend"
+    ]
+}

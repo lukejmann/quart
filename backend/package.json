@@ -1,0 +1,21 @@
+{
+    "name": "backend",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "miniflare -o POOL=Pool -o LOBBY=Lobby -o SPACE=Space -o BLOCK=Block -o USER=User --modules --watch",
+        "build": "cfw build worker --single --no-minify",
+        "types": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@cloudflare/workers-types": "^4.20230115.0",
+        "dog": "^1.1.3",
+        "itty-durable": "^1.6.0"
+    },
+    "devDependencies": {
+        "@cloudflare/workers-types": "2.2.2",
+        "cfw": "0.3.0",
+        "miniflare": "2.11.0",
+        "typescript": "4.4.2"
+    }
+}

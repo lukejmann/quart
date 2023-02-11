@@ -1,1 +1,3 @@
-# quart
+# Quart
+
+Quart is a framework
