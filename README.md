@@ -1,3 +1,3 @@
 # Quart
 
-Quart is a framework
+Quart framework for low technical overhead and low latency client sync. docs otw
